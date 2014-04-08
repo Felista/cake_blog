@@ -9,8 +9,7 @@
         <th>Title</th>
         <th>Action</th>
         <th>Created</th>
-		<th>Edit</th>
-		<th>Delete</th>
+		
     </tr>
 
 <!-- Here's where we loop through our $posts array, printing out post info -->
