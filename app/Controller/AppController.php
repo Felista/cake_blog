@@ -35,23 +35,13 @@ class AppController extends Controller {
         'Session',
         'Auth' => array(
            //'loginRedirect' => array(controller, post, action,index 'controller' => 'posts', 'action' => 'index'),
-            'loginRedirect' => array(
-                'controller' => 'users',
-                'action' => 'index'
-            ),
+            'loginRedirect' => array('controller' => 'users','action' => 'index' ),
 					
-			'logoutRedirect' => array(
-                'controller' => 'users',
-                'action' => 'login'
-            ),
+			'logoutRedirect' => array('controller' => 'users','action' => 'login' ),
 			
 		    'authorize' => array('Controller') // Added this line	
-			
-			
-			
-			
-        )
-    );
+			)
+        );
 
 	    public function isAuthorized($user) {
             // Admin can access every action
@@ -64,15 +54,7 @@ class AppController extends Controller {
 }
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
     public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
+        $this->Auth->allow('index', 'view', 'logout');
     }
 }

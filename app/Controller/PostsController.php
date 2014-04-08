@@ -7,7 +7,7 @@
 			$this->set('posts', $this->Post->find('all'));
 		}
 
-		public function view($id) {
+		public function view($id = null) {
 			if (!$id) {
 				throw new NotFoundException(__('Invalid post'));
 			}
@@ -43,7 +43,7 @@
 			if ($this->request->is(array('post', 'put'))) {
 				$this->Post->id = $id;
 				if ($this->Post->save($this->request->data)) {
-					$this->Session->setFlash(__('Your post has been updated.'));
+					$this->Session->setFlash(__('Your post has been updated'));
 					return $this->redirect(array('action' => 'index'));
 				}
 				$this->Session->setFlash(__('Unable to update your post.'));

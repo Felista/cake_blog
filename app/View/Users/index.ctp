@@ -9,6 +9,7 @@
     <tr>
         <th>id</th>
         <th>username</th>
+		<th>created</th>
         <th>role</th>
         
     </tr>
@@ -18,17 +19,22 @@
 <?php foreach ($users as $user): ?>
     <tr>
         <td><?php echo $user['User']['id']; ?></td>
-        <td><?php echo $user['User']['username']; ?></td>
-		<td><?php echo $user['User']['id']; ?></td>
-        <td><?php echo $this->Html->link('Delete', array('action' => 'delete', $user['User']['id']), array('confirm' => 'Are you sure?')); ?>
-            <?php
-                echo $this->Html->link(
-                    'Edit', array('action' => 'edit', $user['User']['id'])
-                );
-            ?>
-        </td>
+        <td><?php echo $user['User']['username']; 
+		
+		array('controller' =>'users', 'action' => 'view',$users['user']['id])); ?>
+		</td>
+	   <td><?php echo $user['User']['created']; ?></td>
+	           <td><?php  echo $this->Html->link('Edit', 
+				   array('action' => 'edit', $user['User']['id']));
+            ?></td>
+		
+        <td><?php echo $this->Html->link('Delete', 
+		           array('action' => 'delete', $user['User']['id']), 
+				   array('confirm' => 'Are you sure?')); ?>
+            
         
     </tr>
 <?php endforeach; ?>
+<?php unset($user);?>
 
 </table>

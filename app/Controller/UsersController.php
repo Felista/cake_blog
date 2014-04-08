@@ -4,7 +4,11 @@
 
 		public function beforeFilter() {
 			parent::beforeFilter();
-			$this->Auth->allow('add', 'logout');
+			$this->Auth->allow('add', 'logout', 'login');
+		}
+		public function isAuthorized($user){
+		if(in_array($this->action, array('edit', 'delete'))){
+		}
 		}
         public function login() {
 			
@@ -15,7 +19,7 @@
 				return $this->redirect($this->Auth->redirectURL());
 			}
 
-            $this->Session->setFlash(__('Invalid username or password, try again'));
+            $this->Session->setFlash('Invalid username or password, try again');
         }
 	}
 
@@ -37,6 +41,7 @@
 
 		public function add() {
 				if ($this->request->is('post')) {
+				$this->User->create();
 				
 				 //Added this line  - move this line to the postscontroller
            
@@ -45,7 +50,7 @@
 				return $this->redirect(array('action' => 'index'));
         
 				}
-				$this->User->create();
+				
 					if ($this->User->save($this->request->data)) {
 						$this->Session->setFlash(__('The user has been saved'));
 						return $this->redirect(array('action' => 'index'));
