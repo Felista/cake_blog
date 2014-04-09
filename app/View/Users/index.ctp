@@ -1,55 +1,49 @@
-<!-- File: /app/View/Users/index.ctp  (edit links added) -->
+<h1>Users Index</h1>
+<?php echo $this->Html->link(
+    'Add User',
+    array('controller' => 'users', 'action' => 'add')
+  
+); 
 
-<h1>Blog users</h1>
-<p><?php echo $this->Html->link("Add User", 
-     array('action' => 'add')); ?></p>
+?>
+
 <table>
     <tr>
         <th>Id</th>
         <th>Username</th>
-        <th>Role</th>
         <th>Created</th>
-		
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
 
-<!-- Here's where we loop through our $posts array, printing out post info -->
+    <!-- Here is where we loop through our $posts array, printing out post info -->
 
-<?php foreach ($users as $user): ?>
+    <?php foreach ($users as $user): ?>
     <tr>
         <td><?php echo $user['User']['id']; ?></td>
         <td>
-            <?php
-                echo $this->Html->link(
-                    $user['User']['username'],
-                 array('controller'=> 'users', 'action' => 'view', $users['User']['id'])   
-                );
-            ?>
-        </td>
-		 
+            <?php echo $this->Html->link($user['User']['username'],
+				array('controller' => 'users', 'action' => 'view', $user['User']['id'])); ?>
+        </td>       
+        <td><?php echo $user['User']['created']; ?></td>
         <td>
-            <?php
-                echo $this->Form->postLink(
-                    'Delete',
-                    array('action' => 'delete', $user['User']['id']),
-                    array('confirm' => 'Are you sure?')
-                );
-            ?>
-            <?php
-                echo $this->Html->link(
-                    'Edit', array('action' => 'edit', $user['User']['id'])
-                );
-            ?>
+            <?php echo $this->Html->link('Edit',
+                 array('action' => 'edit', $user['User']['id']));?>
         </td>
         <td>
-            <?php echo $user['User']['created']; ?>
-        </td>
+               <?php echo $this->Form->postLink('Delete',
+                   array('action' => 'delete', $user['User']['id']),
+                   array('confirm' => 'Are you sure?'));?>
+         </td>
     </tr>
-<?php endforeach; ?>
-<?php unset($users);?>
-
-
-
-
-
-
+    <?php endforeach; ?>
+    <?php unset($user); ?>
 </table>
+<?php 
+echo $this->Html->link( "Logout",   array('action'=>'logout') ); 
+?>
+<tr>
+<?php 
+echo $this->Html->link( "Add a New User",   array('action'=>'add') ); 
+?>
+</tr>
