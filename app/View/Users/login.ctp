@@ -1,5 +1,5 @@
 <!--app/View/Users/login.ctp -->
-<h2>login</h2>
+<h2>login</h2>                 
 <div class="users form">
 <?php echo $this->Session->flash('auth'); ?>
 <?php echo $this->Form->create('User'); ?>
@@ -14,4 +14,7 @@
     ?>
     </fieldset>
 <?php echo $this->Form->end(__('Login')); ?>
+
+
+<?php echo $this->Form->end(__('Logout')); ?>
 </div>
