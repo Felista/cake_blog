@@ -24,6 +24,7 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 			)
 		);
 		
+		
 		public function beforeSave($options = array()) {
 			if (isset($this->data[$this->alias]['password'])) {
 			$passwordHasher = new SimplePasswordHasher();
@@ -33,5 +34,9 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
     }
     return true;
 }
+
+
+Public $hasMany = array(
+'Post' =>array('className' => 'Post'));
 	} 
 ?>

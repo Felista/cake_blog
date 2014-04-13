@@ -30,7 +30,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
-
+        //echo $this->Html->css('bootstrap');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -40,7 +40,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<div id="container">
 		<div id="header">
 			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-			<li><?php echo $this->Html->link('Home', array('controller' => 'users', 'action'=> 'login')); ?></li>
+			<li><?php echo $this->Html->link('Home', array('controller' => 'users', 'action'=> 'index')); ?></li>
+            <li><?php echo $this->Html->link('Education', array('controller' => 'users', 'action'=> 'index')); ?></li>
+			<li><?php echo $this->Html->link('Politics', array('controller' => 'users', 'action'=> 'index')); ?></li>
+			<li><?php echo $this->Html->link('Entertainment', array('controller' => 'users', 'action'=> 'index')); ?></li>
+			<li><?php echo $this->Html->link('Sports', array('controller' => 'users', 'action'=> 'index')); ?></li>
+			<li><?php echo $this->Html->link('Health', array('controller' => 'users', 'action'=> 'index')); ?></li>
 		</div>
 		<div id="content">
 
