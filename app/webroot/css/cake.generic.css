@@ -740,3 +740,18 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+div# id = header{
+color: blue;
+}
+div# id = container{
+color: green;
+}
+	 
+
+div# id = body{
+font-size:200%;
+font-family:'sans serif';
+
+background-color:#8A2BE2;
+
+}

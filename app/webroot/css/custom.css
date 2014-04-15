@@ -1,0 +1,28 @@
+body {
+background: #51C0DB;
+color: #fff;
+font-family: 'Roman Times;
+font-size: 90%;
+margin: 0;
+}
+#header h1 a {
+color: #fff;
+background: #51C0DB;
+font-weight: normal;
+text-decoration: none;
+}
+#header a, #footer a {
+color: #fff;
+}
+#header h1 {
+line-height: 20px;
+background: #51C0DB ;
+color: #FF0000;
+padding: 0px 30px;
+
+}
+h1 {
+background: #fff;
+color: #003d4c;
+font-size: 100%;
+}

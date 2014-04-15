@@ -16,20 +16,21 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework')
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php echo $cakeDescription; ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('custom');
         //echo $this->Html->css('bootstrap');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -39,13 +40,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-			<li><?php echo $this->Html->link('Home', array('controller' => 'users', 'action'=> 'index')); ?></li>
-            <li><?php echo $this->Html->link('Education', array('controller' => 'users', 'action'=> 'index')); ?></li>
-			<li><?php echo $this->Html->link('Politics', array('controller' => 'users', 'action'=> 'index')); ?></li>
-			<li><?php echo $this->Html->link('Entertainment', array('controller' => 'users', 'action'=> 'index')); ?></li>
-			<li><?php echo $this->Html->link('Sports', array('controller' => 'users', 'action'=> 'index')); ?></li>
-			<li><?php echo $this->Html->link('Health', array('controller' => 'users', 'action'=> 'index')); ?></li>
+			<h1>Welcome to this site</h1>
+			
+				<?php echo $this->Html->link('Home', array('controller' => 'posts', 'action'=> 'index')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<?php echo $this->Html->link('Users', array('controller' => 'users', 'action'=> 'index')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<?php echo $this->Html->link('Add Post', array('controller' => 'posts', 'action'=> 'add')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<?php echo $this->Html->link('Login', array('controller' => 'users', 'action'=> 'login')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
 		</div>
 		<div id="content">
 
@@ -54,14 +55,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
+			<?php echo $this->Html->image('cake.power.gif');
+			
+			
+			
+					
+		
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<!--<?php echo $this->element('sql_dump'); ?>-->
 </body>
 </html>
