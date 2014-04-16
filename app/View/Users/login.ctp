@@ -1,5 +1,5 @@
 <!--app/View/Users/login.ctp --> 
-<h1>Login</h2>                
+<h1>Login</h1>                
 <div class="users form">
 <?php echo $this->Session->flash('auth'); ?>
 <?php echo $this->Form->create('User'); ?>

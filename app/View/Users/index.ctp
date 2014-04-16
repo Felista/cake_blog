@@ -44,6 +44,7 @@ echo $this->Html->link( "Logout",   array('action'=>'logout') );
 ?>
 <tr>
 <?php 
-echo $this->Html->link( "Add a New User",   array('action'=>'add') ); 
+echo $this->Html->link( "Add a New User",   array('action'=>'add') );
+debug($users); 
 ?>
 </tr>

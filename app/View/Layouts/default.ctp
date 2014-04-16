@@ -41,12 +41,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<div id="container">
 		<div id="header">
 			<h1>Welcome to this site</h1>
+             
+               
 			
 				<?php echo $this->Html->link('Home', array('controller' => 'posts', 'action'=> 'index')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<?php echo $this->Html->link('Users', array('controller' => 'users', 'action'=> 'index')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<?php echo $this->Html->link('Add Post', array('controller' => 'posts', 'action'=> 'add')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<?php echo $this->Html->link('Login', array('controller' => 'users', 'action'=> 'login')); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			
+                
 		</div>
 		<div id="content">
 

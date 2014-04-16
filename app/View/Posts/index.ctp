@@ -40,6 +40,8 @@
                 );
             ?>
         </td>
+		 
+
         <td>
             <?php echo $post['Post']['created']; ?>
         </td>

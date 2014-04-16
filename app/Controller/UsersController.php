@@ -7,8 +7,22 @@
 			$this->Auth->allow('add', 'logout', 'login');
 		}
 		public function isAuthorized($user){
-		if(in_array($this->action, array('edit', 'delete'))){
-		}
+    	if(in_array($this->action, array('add'))){
+    		return true;
+    	}
+    	if(in_array($this->action, array('view', 'edit', 'delete'))){
+    		
+    		$userId = $this->request->params['pass'][0];
+    		if($this->Auth->user('id')=== $userId){
+    			debug($this->Auth->user('role'));
+    			return true;
+    		}
+    		else
+    		{
+    		$this->Session->setFlash(__('Sorry only Admin users may modify , view or delete other users'));	
+    		}
+    	}
+    	return parent::isAuthorized($user);
 		}
         public function login() {
 			
